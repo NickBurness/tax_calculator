@@ -65,7 +65,8 @@ namespace TaxCalculator
                 {
                     tax = 2070;
                 }
-            } else if (vehicle.FuelType == FuelType.Diesel)
+            } 
+            else if (vehicle.FuelType == FuelType.Diesel)
             {
                 if (vehicle.Co2Emissions == 0)
                 {
