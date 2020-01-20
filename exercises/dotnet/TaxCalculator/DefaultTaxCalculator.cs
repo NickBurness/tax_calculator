@@ -8,57 +8,61 @@ namespace TaxCalculator
     {
         public override int CalculateTax(Vehicle vehicle)
         {
+            int tax;
+
             if (vehicle.Co2Emissions == 0)
             {
-                return 0;
+                tax = 0;
             }
             else if (vehicle.Co2Emissions <= 50)
             {
-                return 10;
+                tax = 10;
             }
             else if (vehicle.Co2Emissions <= 75)
             {
-                return 25;
+                tax = 25;
             }
             else if (vehicle.Co2Emissions <= 90)
             {
-                return 105;
+                tax = 105;
             }
             else if (vehicle.Co2Emissions <= 100)
             {
-                return 125;
+                tax = 125;
             }
             else if (vehicle.Co2Emissions <= 110)
             {
-                return 145;
+                tax = 145;
             }
             else if (vehicle.Co2Emissions <= 130)
             {
-                return 165;
+                tax = 165;
             }
             else if (vehicle.Co2Emissions <= 150)
             {
-                return 205;
+                tax = 205;
             }
             else if (vehicle.Co2Emissions <= 170)
             {
-                return 515;
+                tax = 515;
             }
             else if (vehicle.Co2Emissions <= 190)
             {
-                return 830;
+                tax = 830;
             }
             else if (vehicle.Co2Emissions <= 225)
             {
-                return 1240;
+                tax = 1240;
             }
             else if (vehicle.Co2Emissions <= 255)
             {
-                return 1760;
+                tax = 1760;
             }
-            else  
-                return 2070;
-
+            else
+            {
+                tax = 2070;
+            }
+            return tax;
         }
     }
 }
