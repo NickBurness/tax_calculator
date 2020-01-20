@@ -8,59 +8,115 @@ namespace TaxCalculator
     {
         public override int CalculateTax(Vehicle vehicle)
         {
-            int tax;
+            int tax = -1;
 
-            if (vehicle.Co2Emissions == 0)
+            if (vehicle.FuelType == FuelType.Petrol)
             {
-                tax = 0;
+                if (vehicle.Co2Emissions <= 0)
+                {
+                    tax = 0;
+                }
+                else if (vehicle.Co2Emissions <= 50)
+                {
+                    tax = 10;
+                }
+                else if (vehicle.Co2Emissions <= 75)
+                {
+                    tax = 25;
+                }
+                else if (vehicle.Co2Emissions <= 90)
+                {
+                    tax = 105;
+                }
+                else if (vehicle.Co2Emissions <= 100)
+                {
+                    tax = 125;
+                }
+                else if (vehicle.Co2Emissions <= 110)
+                {
+                    tax = 145;
+                }
+                else if (vehicle.Co2Emissions <= 130)
+                {
+                    tax = 165;
+                }
+                else if (vehicle.Co2Emissions <= 150)
+                {
+                    tax = 205;
+                }
+                else if (vehicle.Co2Emissions <= 170)
+                {
+                    tax = 515;
+                }
+                else if (vehicle.Co2Emissions <= 190)
+                {
+                    tax = 830;
+                }
+                else if (vehicle.Co2Emissions <= 225)
+                {
+                    tax = 1240;
+                }
+                else if (vehicle.Co2Emissions <= 255)
+                {
+                    tax = 1760;
+                }
+                else
+                {
+                    tax = 2070;
+                }
             }
-            else if (vehicle.Co2Emissions <= 50)
+
+
+            if (vehicle.FuelType == FuelType.AlternativeFuel)
             {
-                tax = 10;
-            }
-            else if (vehicle.Co2Emissions <= 75)
-            {
-                tax = 25;
-            }
-            else if (vehicle.Co2Emissions <= 90)
-            {
-                tax = 105;
-            }
-            else if (vehicle.Co2Emissions <= 100)
-            {
-                tax = 125;
-            }
-            else if (vehicle.Co2Emissions <= 110)
-            {
-                tax = 145;
-            }
-            else if (vehicle.Co2Emissions <= 130)
-            {
-                tax = 165;
-            }
-            else if (vehicle.Co2Emissions <= 150)
-            {
-                tax = 205;
-            }
-            else if (vehicle.Co2Emissions <= 170)
-            {
-                tax = 515;
-            }
-            else if (vehicle.Co2Emissions <= 190)
-            {
-                tax = 830;
-            }
-            else if (vehicle.Co2Emissions <= 225)
-            {
-                tax = 1240;
-            }
-            else if (vehicle.Co2Emissions <= 255)
-            {
-                tax = 1760;
-            }
-            else
-            {
-                tax = 2070;
+                if (vehicle.Co2Emissions <= 50)
+                {
+                    tax = 0;
+                }
+                else if (vehicle.Co2Emissions <= 75)
+                {
+                    tax = 15;
+                }
+                else if (vehicle.Co2Emissions <= 90)
+                {
+                    tax = 95;
+                }
+                else if (vehicle.Co2Emissions <= 100)
+                {
+                    tax = 115;
+                }
+                else if (vehicle.Co2Emissions <= 110)
+                {
+                    tax = 135;
+                }
+                else if (vehicle.Co2Emissions <= 130)
+                {
+                    tax = 155;
+                }
+                else if (vehicle.Co2Emissions <= 150)
+                {
+                    tax = 195;
+                }
+                else if (vehicle.Co2Emissions <= 170)
+                {
+                    tax = 505;
+                }
+                else if (vehicle.Co2Emissions <= 190)
+                {
+                    tax = 820;
+                }
+                else if (vehicle.Co2Emissions <= 225)
+                {
+                    tax = 1230;
+                }
+                else if (vehicle.Co2Emissions <= 255)
+                {
+                    tax = 1750;
+                }
+                else
+                {
+                    tax = 2060;
+                }
             }
             return tax;
         }
