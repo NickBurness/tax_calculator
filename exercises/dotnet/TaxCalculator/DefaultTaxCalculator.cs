@@ -111,10 +111,6 @@ namespace TaxCalculator
                 {
                     tax = 1760;
                 }
-                else if (vehicle.Co2Emissions <= 255)
-                {
-                    tax = 2070;
-                }
                 else
                 {
                     tax = 2070;
