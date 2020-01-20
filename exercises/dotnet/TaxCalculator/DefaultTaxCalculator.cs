@@ -118,6 +118,10 @@ namespace TaxCalculator
                     tax = 2060;
                 }
             }
+            if (vehicle.FuelType == FuelType.Electric)
+            {
+                tax = 0;
+            }
             return tax;
         }
     }
