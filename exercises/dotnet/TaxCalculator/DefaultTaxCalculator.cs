@@ -5,11 +5,16 @@ using System.Text;
 namespace TaxCalculator
 {
     public class DefaultTaxCalculator : TaxCalculator
+
     {   public DefaultTaxCalculator(int year, bool secondTaxPayment, bool secondTaxPaymentForExpensiveVehicle) : base(year, secondTaxPayment, secondTaxPaymentForExpensiveVehicle)
         {
             
         }
 
+        public bool ExpensiveVehicleCheck(Vehicle vehicle)
+        {
+            return vehicle.ListPrice > 40000 ? true : false;
+        }
 
         public override int CalculateTax(Vehicle vehicle)
         {
@@ -137,7 +142,7 @@ namespace TaxCalculator
                 {
                     tax = 140;
                 }
-                if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+                if (ExpensiveVehicleCheck(vehicle) && SecondTaxPaymentForExpensiveVehicle == true)
                 {
                     tax = 450;
                 }
