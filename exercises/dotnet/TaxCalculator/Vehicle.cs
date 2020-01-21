@@ -9,12 +9,15 @@ namespace TaxCalculator
         public DateTime DateOfFirstRegistration { get; }
         public int ListPrice { get; }
 
-        public Vehicle(int co2Emissions, FuelType fuelType, DateTime dateOfFirstRegistration, int listPrice)
+        public bool Rde2Compliant { get; }
+
+        public Vehicle(int co2Emissions, FuelType fuelType, DateTime dateOfFirstRegistration, int listPrice, bool rde2Compliant = false)
         {
             Co2Emissions = co2Emissions;
             FuelType = fuelType;
             DateOfFirstRegistration = dateOfFirstRegistration;
             ListPrice = listPrice;
+            Rde2Compliant = rde2Compliant;
         }
     }
 }
