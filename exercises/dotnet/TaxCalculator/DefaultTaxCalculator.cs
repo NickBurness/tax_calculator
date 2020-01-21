@@ -98,43 +98,43 @@ namespace TaxCalculator
             }
             else if (vehicle.Co2Emissions <= 75)
             {
-                tax = 105;
+                tax = 110;
             }
             else if (vehicle.Co2Emissions <= 90)
             {
-                tax = 125;
+                tax = 130;
             }
             else if (vehicle.Co2Emissions <= 100)
             {
-                tax = 145;
+                tax = 150;
             }
             else if (vehicle.Co2Emissions <= 110)
             {
-                tax = 165;
+                tax = 170;
             }
             else if (vehicle.Co2Emissions <= 130)
             {
-                tax = 205;
+                tax = 210;
             }
             else if (vehicle.Co2Emissions <= 150)
             {
-                tax = 515;
+                tax = 530;
             }
             else if (vehicle.Co2Emissions <= 170)
             {
-                tax = 830;
+                tax = 855;
             }
             else if (vehicle.Co2Emissions <= 190)
             {
-                tax = 1240;
+                tax = 1280;
             }
             else if (vehicle.Co2Emissions <= 225)
             {
-                tax = 1760;
+                tax = 1815;
             }
             else
             {
-                tax = 2070;
+                tax = 2135;
             }
 
             if (SecondTaxPayment == true)
