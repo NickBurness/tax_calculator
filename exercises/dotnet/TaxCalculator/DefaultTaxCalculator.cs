@@ -18,8 +18,7 @@ namespace TaxCalculator
 
         public int CalculateTaxPetrol(Vehicle vehicle)
         {
-            int tax = -1;
-
+            int tax;
             if (vehicle.Co2Emissions <= 0)
             {
                 tax = 0;
@@ -78,7 +77,7 @@ namespace TaxCalculator
                 tax = 140;
             }
 
-            if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+            if (ExpensiveVehicleCheck(vehicle) && SecondTaxPaymentForExpensiveVehicle == true)
             {
                 tax = 450;
             }
@@ -88,8 +87,7 @@ namespace TaxCalculator
 
         public int CalculateTaxDiesel(Vehicle vehicle)
         {
-            int tax = -1;
-
+            int tax;
             if (vehicle.Co2Emissions == 0)
             {
                 tax = 0;
@@ -143,19 +141,18 @@ namespace TaxCalculator
             {
                 tax = 130;
             }
-            if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+
+            if (ExpensiveVehicleCheck(vehicle) && SecondTaxPaymentForExpensiveVehicle == true)
             {
                 tax = 440;
             }
 
             return tax;
-
         }
 
         public int CalculateTaxAlternative(Vehicle vehicle)
         {
-            int tax = -1;
-
+            int tax;
             if (vehicle.Co2Emissions <= 50)
             {
                 tax = 0;
@@ -204,20 +201,23 @@ namespace TaxCalculator
             {
                 tax = 2060;
             }
+
             if (SecondTaxPayment == true)
             {
                 tax = 130;
             }
+
             if (ExpensiveVehicleCheck(vehicle) && SecondTaxPaymentForExpensiveVehicle == true)
             {
                 tax = 440;
             }
+
             return tax;
         }
 
         public int CalculateTaxElectric(Vehicle vehicle)
         {
-            int tax = -1;
+            int tax;
 
             tax = 0;
             if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
