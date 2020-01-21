@@ -5,11 +5,17 @@ using System.Text;
 namespace TaxCalculator
 {
     public class DefaultTaxCalculator : TaxCalculator
-    {
+    {   public DefaultTaxCalculator(int year, bool secondTaxPayment) : base(year, secondTaxPayment)
+        {
+            
+        }
+
+
         public override int CalculateTax(Vehicle vehicle)
         {
 
             int tax = -1;
+      
 
             if (vehicle.FuelType == FuelType.Petrol)
             {
@@ -66,6 +72,11 @@ namespace TaxCalculator
                     tax = 2070;
                 }
 
+                if(SecondTaxPayment == true)
+                {
+                    tax = 140;
+                }
+
             } 
             else if (vehicle.FuelType == FuelType.Diesel)
             {
@@ -116,6 +127,11 @@ namespace TaxCalculator
                 else
                 {
                     tax = 2070;
+                }
+
+                if (SecondTaxPayment == true)
+                {
+                    tax = 140;
                 }
             }
             
@@ -168,6 +184,11 @@ namespace TaxCalculator
                 else
                 {
                     tax = 2060;
+                }
+
+                if (SecondTaxPayment == true)
+                {
+                    tax = 130;
                 }
             }
             else if (vehicle.FuelType == FuelType.Electric)
