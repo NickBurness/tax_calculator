@@ -5,7 +5,7 @@ using System.Text;
 namespace TaxCalculator
 {
     public class DefaultTaxCalculator : TaxCalculator
-    {   public DefaultTaxCalculator(int year, bool secondTaxPayment) : base(year, secondTaxPayment)
+    {   public DefaultTaxCalculator(int year, bool secondTaxPayment, bool secondTaxPaymentForExpensiveVehicle) : base(year, secondTaxPayment, secondTaxPaymentForExpensiveVehicle)
         {
             
         }
@@ -77,6 +77,10 @@ namespace TaxCalculator
                     tax = 140;
                 }
 
+                if(vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+                {
+                    tax = 450;
+                }
             } 
             else if (vehicle.FuelType == FuelType.Diesel)
             {
@@ -132,6 +136,10 @@ namespace TaxCalculator
                 if (SecondTaxPayment == true)
                 {
                     tax = 140;
+                }
+                if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+                {
+                    tax = 450;
                 }
             }
             
@@ -190,11 +198,20 @@ namespace TaxCalculator
                 {
                     tax = 130;
                 }
+                if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+                {
+                    tax = 440;
+                }
             }
             else if (vehicle.FuelType == FuelType.Electric)
             {
                 tax = 0;
+                if (vehicle.ListPrice > 40000 && SecondTaxPaymentForExpensiveVehicle == true)
+                {
+                    tax = 310;
+                }
             }
+            
 
             return tax;
         }
